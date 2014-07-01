@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ZamanVideoCms</title>
+	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			display: inline;
+			padding-left: 15px;
+		}
+
+
+		a {
+			text-decoration: none;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<ul>
+		<li><%= link_to "Categories" , categories_path %></li>
+		<li><%= link_to "Programs" , programs_path %></li>
+		<li><%= link_to "Episodes" , episodes_path %></li>
+	</ul>
+
+	<%= yield %>
+
+</body>
+</html>

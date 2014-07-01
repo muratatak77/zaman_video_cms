@@ -1,0 +1,24 @@
+<h1>Category#index</h1>
+<p>Find me in app/views/category/index.html.erb</p>
+<p>
+	<%= link_to "New Category" , new_category_path %>
+</p>
+
+<table border="1" cellspacing="1" cellpadding="3">  
+	<tr>
+		<th>Id</th>
+		<th>Isim</th>
+		<th>Islemler</th>
+	</tr>
+
+	<%= @categories.each do |c| %>
+		<tr>
+			<td><%= c.id %></td>
+			<td><%= c.name %></td>
+			<td>
+				<%= link_to "Detay" , category_path(c) %> - 
+				<%= link_to "Duzenle" , edit_category_path(c) %>
+			</td>
+		</tr>
+	<% end %>
+</table>
