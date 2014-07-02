@@ -1,8 +1,17 @@
-<p>
-	Episode Detay
-</p>
+<h3>Bolum Bilgileri:</h3>
 <hr>
 <p>
+	<strong>Bolum Ismi:</strong>
 	<%= @episode.name %>
 
+</p>
+<p>
+	<strong>Bolumun ait oldugu program:</strong>
+	<% unless  @episode.program.blank? %> 
+	<%= @episode.program.name  %>
+	<% end -%>
+</p>
+<p>
+	 <%= link_to image_tag(@episode.image.url(:thumb)),@episode.image.url(:medium) %> 
+	
 </p>

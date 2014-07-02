@@ -5,15 +5,10 @@
 		<%= f.label "Isim" %><br />
 		<%= f.text_field :name %>
 	</p>
-
 	<p>
 		<%= f.label "Kategori Seciniz" %><br/>
-		<%= f.select :category_id, options_from_collection_for_select(@categories, "id", "name" , @program.category_id ) %>
-
-
+		<%= f.collection_select :category_id, Category.all, :id, :name, :include_blank => 'Kategori seciniz' %>
 	</p>
-
-	
 	<p>
 		<%= f.submit %>
 	</p>

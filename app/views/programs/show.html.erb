@@ -1,8 +1,13 @@
-<p>
-	Program Detay
-</p>
+<h3>Program Detay</h3>	
 <hr>
 <p>
+	<strong>Program Ismi:</strong>
 	<%= @program.name %>
+</p>
 
+<p>
+	<strong>Kategorisi:</strong>
+	<% unless @program.category.blank? %> 
+	<%= @program.category.name   %>
+	<% end -%>
 </p>

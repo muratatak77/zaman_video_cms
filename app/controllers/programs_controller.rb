@@ -4,11 +4,11 @@ class ProgramsController < ApplicationController
 
   def index
     @programs = Program.all
+    
   end
 
   def new
     @program = Program.new
-    @categories = Category.all
   end
 
   def show
@@ -20,7 +20,7 @@ class ProgramsController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
+
   end
 
   def update
@@ -30,6 +30,8 @@ class ProgramsController < ApplicationController
 
 
   def destroy
+    @program.destroy
+    redirect_to programs_path
   end
 
   private

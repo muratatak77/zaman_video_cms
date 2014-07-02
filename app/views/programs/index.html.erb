@@ -1,4 +1,4 @@
-<h1>Program#index</h1>
+<h3>Tum Programlar</h3>
 <p>
 	<%= link_to "New Program" , new_program_path %>
 </p>
@@ -11,14 +11,15 @@
 		<th>Islemler</th>
 	</tr>
 
-	<%= @programs.each do |c| %>
+	<% @programs.each do |program| %>
 		<tr>
-			<td><%= c.id %></td>
-			<td><%= c.name %></td>
-			<td><%= c.category %></td>
+			<td><%= program.id %></td>
+			<td><%= program.name %></td>
+		    <td><% if  program.category.blank? ? "Kategori Seciniz" : program.category.name%> </td> <% end -%>
 			<td>
-				<%= link_to "Detay" , program_path(c) %> - 
-				<%= link_to "Duzenle" , edit_program_path(c) %>
+				<%= link_to "Detay" , program_path(program) %> - 
+				<%= link_to "Duzenle" , edit_program_path(program) %> -
+				<%= link_to "Sil", program, method: :delete, data: {confirm: 'Emin misiniz?'}  %>
 			</td>
 		</tr>
 	<% end %>

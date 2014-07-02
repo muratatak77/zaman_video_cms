@@ -1,14 +1,21 @@
 
-<%= form_for @episode do |f| %>
+<%= form_for @episode, :html => { :multipart => true } do |f| %>
 	
 	<p>
-		<%= f.label "Isim" %><br />
+		<%= f.label "Isim:" %><br />
 		<%= f.text_field :name %>
 	</p>
+	<p>
+		<%= f.label "Kategori:" %><br />
+		<%= f.collection_select :program_id, Program.all, :id, :name %>
 
 	<p>
-		<%= f.label "Video" %><br />
+		<%= f.label "Video:" %><br />
 		<%= f.text_area :video %>
+	</p>
+	<p>
+		<%= f.label "Image:" %><br />
+		<%= f.file_field :image %>
 	</p>
 	
 	<p>

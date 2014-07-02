@@ -28,6 +28,8 @@ class EpisodesController < ApplicationController
 
 
   def destroy
+    @episode.destroy
+    redirect_to episodes_path
   end
 
   private
@@ -36,6 +38,6 @@ class EpisodesController < ApplicationController
   end
 
   def permit_params
-    params.require(:episode).permit(:name, :video)
+    params.require(:episode).permit(:name, :video, :program_id, :image)
   end
 end

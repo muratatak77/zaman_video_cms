@@ -1,8 +1,15 @@
-<p>
-	Kategori Detay
-</p>
+
+<h3>Kategori Detay:</h3>
 <hr>
 <p>
+	<strong>Kategori Ismi:</strong>
 	<%= @category.name %>
 
+</p>
+
+<p>
+	<strong>Kategoriye ait programlar:</strong>
+	<% @category.programs.each do |p| %>
+		<%= p.name %>
+	<% end -%>
 </p>
