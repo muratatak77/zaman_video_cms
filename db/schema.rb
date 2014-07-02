@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140702112039) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -31,7 +34,7 @@ ActiveRecord::Schema.define(version: 20140702112039) do
     t.datetime "image_updated_at"
   end
 
-  add_index "episodes", ["program_id"], name: "index_episodes_on_program_id"
+  add_index "episodes", ["program_id"], name: "index_episodes_on_program_id", using: :btree
 
   create_table "programs", force: true do |t|
     t.string   "name"
@@ -40,6 +43,6 @@ ActiveRecord::Schema.define(version: 20140702112039) do
     t.integer  "category_id"
   end
 
-  add_index "programs", ["category_id"], name: "index_programs_on_category_id"
+  add_index "programs", ["category_id"], name: "index_programs_on_category_id", using: :btree
 
 end
