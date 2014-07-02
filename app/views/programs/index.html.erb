@@ -15,8 +15,7 @@
 		<tr>
 			<td><%= program.id %></td>
 			<td><%= program.name %></td>
-		    <td><% if  program.category.blank? ? "Kategori Seciniz" : program.category.name%> </td> <% end -%>
-			<td>
+		    <% if program.category.blank? %><td> <%= program.category.name %> </td> <% end -%>
 				<%= link_to "Detay" , program_path(program) %> - 
 				<%= link_to "Duzenle" , edit_program_path(program) %> -
 				<%= link_to "Sil", program, method: :delete, data: {confirm: 'Emin misiniz?'}  %>
