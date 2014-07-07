@@ -15,9 +15,9 @@
 		<tr>
 			<td><%= program.id %></td>
 			<td><%= program.name %></td>
-		    <% if  program.category.blank?%> 
-		    <td><%= program.category.name %></td>
-		 <% end -%>
+		    <% unless  program.category.blank?%> 
+		    	<td><%= program.category.name %></td>
+		 	<% end -%>
 			<td>
 				<%= link_to "Detay" , program_path(program) %> - 
 				<%= link_to "Duzenle" , edit_program_path(program) %> -
